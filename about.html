@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About GSTAM — Green Science and Technology Association Malaysia</title>
+<meta name="description" content="GSTAM's mission, vision, history and governance — a Malaysian association advancing environmental science, renewable energy and biotechnology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* ---- page-specific: About ---- */
+  .about-masthead{padding-top:clamp(3rem,6vw,5rem);}
+  .about-masthead__grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;}
+  .about-masthead h1{font-size:var(--step-1);max-width:12ch;}
+  .about-masthead__media{position:relative;aspect-ratio:5/4;overflow:hidden;margin-top:2.5rem;}
+  .about-masthead__media img{width:100%;height:100%;object-fit:cover;}
+  @media (max-width:820px){ .about-masthead__grid{grid-template-columns:1fr;} }
+
+  .pillars{border-top:1px solid var(--line);}
+  .pillar{
+    display:grid;grid-template-columns:220px 1fr;gap:2.5rem;
+    padding:2.8rem 0;border-bottom:1px solid var(--line);
+  }
+  .pillar__label{font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay-500);}
+  .pillar__body h3{font-size:var(--step-3);max-width:20ch;margin-bottom:0.9rem;}
+  .pillar__body p{color:var(--charcoal-500);max-width:56ch;line-height:1.75;}
+  .pillar__body ul{margin-top:1rem;display:flex;flex-direction:column;gap:0.55rem;}
+  .pillar__body li{color:var(--charcoal-700);font-size:0.95rem;padding-left:1.3rem;position:relative;}
+  .pillar__body li::before{content:"";position:absolute;left:0;top:0.6em;width:6px;height:1px;background:var(--clay-500);}
+  @media (max-width:760px){ .pillar{grid-template-columns:1fr;gap:0.8rem;} }
+
+  /* timeline */
+  .timeline{position:relative;border-left:1px solid var(--line);margin-left:6px;}
+  .timeline-item{position:relative;padding:0 0 3.2rem 2.6rem;}
+  .timeline-item::before{
+    content:"";position:absolute;left:-6.5px;top:0.3rem;
+    width:12px;height:12px;border-radius:50%;
+    background:var(--paper);border:1.5px solid var(--forest-950);
+  }
+  .timeline-item__year{font-family:var(--font-mono);font-size:0.8rem;color:var(--clay-500);}
+  .timeline-item h4{font-family:var(--font-display);font-size:1.3rem;margin-top:0.4rem;max-width:34ch;color:var(--forest-950);}
+  .timeline-item p{margin-top:0.5rem;color:var(--charcoal-500);max-width:48ch;font-size:0.94rem;line-height:1.7;}
+
+  /* leadership */
+  .council-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .council-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.2rem 1.8rem;}
+  .council-cell__role{font-family:var(--font-display);font-size:1.15rem;color:var(--forest-950);max-width:20ch;}
+  .council-cell__desc{margin-top:0.6rem;color:var(--charcoal-500);font-size:0.86rem;line-height:1.6;}
+  @media (max-width:820px){ .council-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .council-grid{grid-template-columns:1fr;} }
+
+  /* partner network */
+  .partner-types{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .partner-type{background:var(--paper);padding:2.4rem 1.6rem;}
+  .partner-type__count{font-family:var(--font-display);font-size:2.2rem;color:var(--forest-950);}
+  .partner-type__label{margin-top:0.5rem;color:var(--charcoal-500);font-size:0.86rem;}
+  @media (max-width:820px){ .partner-types{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body data-page-title="About GSTAM">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce" data-announce-id="symposium2026">
+  <div class="announce__row">
+    <span>Registration is open — GSTAM National Symposium on Green Technology, 12–13 Nov, Kuala Lumpur.</span>
+    <a href="news-events.html">Details</a>
+    <button class="announce__close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__row">
+    <a href="index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 4C20 4 8 12 8 23C8 30.2 13.4 36 20 36C26.6 36 32 30.2 32 23C32 12 20 4 20 4Z" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 36V16" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 22C20 22 14 20 12 14" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M20 27C20 27 27 25 29 18" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <span class="brand__word"><b>GSTAM</b><span>Green Science &amp; Technology Assoc. Malaysia</span></span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="focus-areas.html">Focus Areas</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="news-events.html">News &amp; Events</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+    <a href="contact.html" class="nav-cta is-desktop">Contact GSTAM</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-mobile" id="mobile-menu">
+  <div class="nav-mobile__top">
+    <span class="brand"><span class="brand__word"><b>GSTAM</b></span></span>
+    <button class="nav-mobile__close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="focus-areas.html">Focus Areas</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="nav-mobile__foot">Petaling Jaya, Selangor, Malaysia<br>info@gstam.org.my</p>
+</div>
+
+<main id="main">
+
+  <!-- ===================== Masthead ===================== -->
+  <section class="section about-masthead">
+    <div class="container about-masthead__grid">
+      <div data-reveal>
+        <span class="eyebrow">About GSTAM</span>
+        <h1 style="margin-top:1.1rem;">A scientific home for Malaysia's environmental practitioners.</h1>
+      </div>
+      <div data-reveal data-reveal-delay="1">
+        <p style="color:var(--charcoal-500);font-size:1.05rem;line-height:1.8;">GSTAM is a professional association of scientists, engineers, educators and policy practitioners working on the environmental challenges facing Malaysia — from renewable energy deployment to biodiversity loss. We exist to connect research with the people who can act on it.</p>
+      </div>
+    </div>
+    <div class="container about-masthead__media" data-reveal>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mossy%20Forest%20in%20Cameron%20Highland.jpg?width=2000" alt="Mossy montane forest at Cameron Highlands, Malaysia, with moss-draped branches">
+    </div>
+  </section>
+
+  <!-- ===================== Mission / Vision / Objectives ===================== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="pillars">
+        <div class="pillar" data-reveal>
+          <span class="pillar__label">Mission</span>
+          <div class="pillar__body">
+            <h3>Translate environmental science into action Malaysia can use.</h3>
+            <p>We generate, curate and share applied research across green technology and environmental science — and put it directly into the hands of agencies, industry and communities who can put it to work.</p>
+          </div>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__label">Vision</span>
+          <div class="pillar__body">
+            <h3>A Malaysia where environmental science shapes everyday decisions.</h3>
+            <p>From land use to industrial policy, we want scientific evidence to be the default starting point — not an afterthought — in how Malaysia builds its economy and manages its natural resources.</p>
+          </div>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__label">Objectives</span>
+          <div class="pillar__body">
+            <h3>What we commit to doing, in practice.</h3>
+            <ul>
+              <li>Advance research in renewable energy, biotechnology and the circular economy relevant to Malaysian conditions.</li>
+              <li>Support technical training and capacity-building for students, practitioners and public officers.</li>
+              <li>Provide independent scientific input to environmental policy discussions.</li>
+              <li>Facilitate collaboration between universities, government agencies, industry and civil society.</li>
+              <li>Communicate environmental science clearly to the public.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== History timeline ===================== -->
+  <section class="section section--sage">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>History</h2>
+        <p data-reveal>From a small working group of environmental researchers to a national association.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-reveal>
+          <span class="timeline-item__year">2011</span>
+          <h4>A working group of environmental scientists begins meeting informally in Kuala Lumpur.</h4>
+          <p>Researchers from several universities start sharing unpublished field data on forest degradation and water quality — the seed of what becomes GSTAM.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="1">
+          <span class="timeline-item__year">2014</span>
+          <h4>GSTAM is formally registered as an association.</h4>
+          <p>A founding council is elected and the association adopts its first constitution, focused on research dissemination and public education.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="2">
+          <span class="timeline-item__year">2017</span>
+          <h4>First national symposium on green technology.</h4>
+          <p>GSTAM convenes its first multi-institution symposium, bringing renewable energy and biotechnology researchers into direct dialogue with policymakers.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="3">
+          <span class="timeline-item__year">2019</span>
+          <h4>Field programmes expand into mangrove and river-basin monitoring.</h4>
+          <p>Long-term ecological monitoring partnerships begin in Perak and Sabah, forming the basis of GSTAM's current project portfolio.</p>
+        </div>
+        <div class="timeline-item" data-reveal>
+          <span class="timeline-item__year">2023</span>
+          <h4>Training programmes cross 3,000 participants.</h4>
+          <p>Cumulative reach of GSTAM's technical workshops and school outreach passes a significant milestone.</p>
+        </div>
+        <div class="timeline-item" data-reveal data-reveal-delay="1">
+          <span class="timeline-item__year">2026</span>
+          <h4>GSTAM today.</h4>
+          <p>Active across renewable energy, circular economy, biotechnology, ecosystem science and environmental education, with field partners across Peninsular and East Malaysia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Organisation / leadership ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Organisation</h2>
+        <p data-reveal>GSTAM is governed by an elected council, with specialist committees leading each focus area.</p>
+      </div>
+      <div class="council-grid" data-reveal>
+        <div class="council-cell"><div class="council-cell__role">President</div><p class="council-cell__desc">Sets strategic direction and represents GSTAM to government and international partners.</p></div>
+        <div class="council-cell"><div class="council-cell__role">Deputy President</div><p class="council-cell__desc">Oversees programme delivery across all focus-area committees.</p></div>
+        <div class="council-cell"><div class="council-cell__role">Honorary Secretary</div><p class="council-cell__desc">Manages governance, membership and association records.</p></div>
+        <div class="council-cell"><div class="council-cell__role">Honorary Treasurer</div><p class="council-cell__desc">Oversees finances, grants and funding compliance.</p></div>
+        <div class="council-cell"><div class="council-cell__role">Chair, Research Committee</div><p class="council-cell__desc">Coordinates publications, peer review and research partnerships.</p></div>
+        <div class="council-cell"><div class="council-cell__role">Chair, Education Committee</div><p class="council-cell__desc">Leads training programmes, school outreach and public communication.</p></div>
+      </div>
+      <p style="margin-top:1.6rem;color:var(--charcoal-500);font-size:0.9rem;">Council members are elected biennially by the GSTAM membership. Full governance documents are available to members on request.</p>
+    </div>
+  </section>
+
+  <!-- ===================== Community / partners ===================== -->
+  <section class="feature-split" data-reveal>
+    <div class="feature-split__media">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tree%20planting%20with%20APE%20Malaysia.jpg?width=1400" alt="Volunteers planting tree saplings as part of a Malaysian reforestation programme">
+    </div>
+    <div class="feature-split__text">
+      <span class="eyebrow">Working together</span>
+      <h3>Science is only useful when it's shared.</h3>
+      <p>Every GSTAM programme is built jointly with the institutions and communities it serves — from field data collection with local fisherfolk to co-authored technical guidance for agencies.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Partner network</h2>
+        <p data-reveal>GSTAM works across four kinds of partners to move research into practice.</p>
+      </div>
+      <div class="partner-types" data-reveal>
+        <div class="partner-type"><div class="partner-type__count">Research</div><p class="partner-type__label">Public and private universities collaborating on field studies and publications</p></div>
+        <div class="partner-type"><div class="partner-type__count">Government</div><p class="partner-type__label">Federal and state agencies on forestry, energy and environmental policy</p></div>
+        <div class="partner-type"><div class="partner-type__count">Industry</div><p class="partner-type__label">Renewable energy, waste management and manufacturing partners</p></div>
+        <div class="partner-type"><div class="partner-type__count">Community</div><p class="partner-type__label">NGOs, Orang Asli communities and local fisherfolk associations</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Closing ===================== -->
+  <section class="closing">
+    <div class="container">
+      <h2 data-reveal>Interested in joining GSTAM as a member or partner?</h2>
+      <a href="contact.html" class="btn btn--invert" data-reveal data-reveal-delay="1">Get in touch</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <span class="brand"><span class="brand__word"><b>GSTAM</b></span></span>
+      <p>Green Science and Technology Association Malaysia — research, education and field action for a resilient environment.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="about.html">About</a>
+      <a href="focus-areas.html">Focus Areas</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <a href="news-events.html">News &amp; Events</a>
+      <a href="resources.html">Media &amp; Reports</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="https://www.linkedin.com">LinkedIn</a>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.youtube.com">YouTube</a>
+    </div>
+    <div class="footer-col footer-newsletter">
+      <h5>Stay informed</h5>
+      <form onsubmit="return false;">
+        <label for="footer-email" class="visually-hidden">Email address</label>
+        <input id="footer-email" type="email" placeholder="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="footer-note">Occasional updates. Unsubscribe anytime.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span data-current-year>2026</span> Green Science and Technology Association Malaysia</span>
+    <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<div class="cookie-bar" role="dialog" aria-label="Cookie preferences">
+  <p>We use cookies to remember your preferences and understand site usage. Read our <a href="#">privacy policy</a>.</p>
+  <div class="cookie-bar__actions">
+    <button class="cookie-accept">Accept</button>
+    <button class="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.4"/></svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>
