@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — GSTAM</title>
+<title>Contact - GSTAM</title>
 <meta name="description" content="Get in touch with Green Science and Technology Association Malaysia — membership, partnerships, media enquiries and general questions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,6 @@
   .contact-map{margin-top:2.2rem;border:1px solid var(--line);aspect-ratio:4/3;}
   .contact-map iframe{width:100%;height:100%;border:0;filter:grayscale(0.35) contrast(1.05);}
 
-  /* form */
   .cform{display:flex;flex-direction:column;gap:1.4rem;}
   .cform-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
   @media (max-width:560px){ .cform-row{grid-template-columns:1fr;} }
@@ -119,7 +118,6 @@
 
 <main id="main">
 
-  <!-- ===================== Masthead ===================== -->
   <section class="c-masthead">
     <div class="container">
       <span class="eyebrow">Contact</span>
@@ -132,7 +130,6 @@
     <div class="container">
       <div class="contact-grid">
 
-        <!-- ---------- Info ---------- -->
         <div class="contact-info" data-reveal>
           <dl>
             <div>
@@ -162,7 +159,6 @@
           </div>
         </div>
 
-        <!-- ---------- Form ---------- -->
         <div data-reveal data-reveal-delay="1">
           <form class="cform" id="contact-form" novalidate>
             <div class="cform-row">
@@ -260,7 +256,7 @@
 
 <script src="main.js"></script>
 <script>
-  /* ---- contact form: draft in sessionStorage, reply preference in localStorage ---- */
+  
   (function(){
     "use strict";
     var form = document.getElementById('contact-form');
@@ -270,7 +266,6 @@
     var fields = ['name','email','subject','message'];
     var success = document.getElementById('cf-success');
 
-    /* restore draft (session-only: cleared when the tab/session ends) */
     try{
       var saved = JSON.parse(sessionStorage.getItem(DRAFT_KEY) || 'null');
       if(saved){
@@ -280,7 +275,6 @@
       }
     }catch(e){}
 
-    /* restore preferred contact method (persists across visits) */
     try{
       var pref = localStorage.getItem(PREF_KEY);
       if(pref){
@@ -289,7 +283,6 @@
       }
     }catch(e){}
 
-    /* autosave draft as the visitor types */
     function saveDraft(){
       var data = {};
       fields.forEach(function(f){ data[f] = form.elements[f] ? form.elements[f].value : ''; });
