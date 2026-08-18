@@ -1,12 +1,7 @@
-/* ==========================================================================
-   GSTAM — shared site behaviour
-   Uses: localStorage (persisted preferences), sessionStorage (session-only
-   UI state), cookies (consent), IntersectionObserver (reveals / counters)
-   ========================================================================== */
+
 (function(){
   "use strict";
 
-  /* ---------- tiny cookie helpers ---------- */
   function setCookie(name, value, days){
     var expires = "";
     if(days){
@@ -21,7 +16,6 @@
     return match ? decodeURIComponent(match[1]) : null;
   }
 
-  /* ---------- mobile navigation ---------- */
   function initNav(){
     var toggle = document.querySelector('.nav-toggle');
     var mobile = document.querySelector('.nav-mobile');
@@ -53,7 +47,6 @@
     });
   }
 
-  /* ---------- header hide-on-scroll ---------- */
   function initHeader(){
     var header = document.querySelector('.site-header');
     if(!header) return;
@@ -69,7 +62,6 @@
     }, {passive:true});
   }
 
-  /* ---------- scroll reveal ---------- */
   function initReveal(){
     var els = document.querySelectorAll('[data-reveal]');
     if(!els.length) return;
@@ -88,7 +80,6 @@
     els.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---------- number counters ---------- */
   function initCounters(){
     var els = document.querySelectorAll('[data-count-to]');
     if(!els.length) return;
@@ -114,7 +105,6 @@
     els.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---------- announcement bar (localStorage dismissal) ---------- */
   function initAnnounce(){
     var bar = document.querySelector('.announce');
     if(!bar) return;
@@ -132,7 +122,6 @@
     }
   }
 
-  /* ---------- cookie consent ---------- */
   function initCookieConsent(){
     var bar = document.querySelector('.cookie-bar');
     if(!bar) return;
@@ -158,7 +147,6 @@
     }
   }
 
-  /* ---------- back to top ---------- */
   function initBackToTop(){
     var btn = document.querySelector('.back-to-top');
     if(!btn) return;
@@ -170,7 +158,6 @@
     });
   }
 
-  /* ---------- hero image load state ---------- */
   function initHero(){
     var hero = document.querySelector('.hero');
     if(!hero) return;
@@ -180,7 +167,6 @@
     else{ img.addEventListener('load', function(){ hero.classList.add('is-loaded'); }); }
   }
 
-  /* ---------- lazy video: swap poster button for YouTube iframe ---------- */
   function initVideo(){
     document.querySelectorAll('.video-block__poster').forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -197,7 +183,6 @@
     });
   }
 
-  /* ---------- recently viewed (localStorage) ---------- */
   function trackRecentlyViewed(){
     var page = document.body.getAttribute('data-page-title');
     var url = window.location.pathname.split('/').pop() || 'index.html';
@@ -211,7 +196,6 @@
     }catch(e){ /* storage unavailable — fail silently */ }
   }
 
-  /* ---------- restore mobile-nav session state (e.g. after in-page nav) ---------- */
   function restoreNavState(){
     if(sessionStorage.getItem('gstam_nav_open') === '1'){
       sessionStorage.removeItem('gstam_nav_open');
