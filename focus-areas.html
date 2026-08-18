@@ -7,10 +7,9 @@
 <meta name="description" content="GSTAM's areas of work: renewable energy, circular economy, biotechnology, environmental science, sustainable agriculture, green engineering, conservation and education.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* ---- page masthead ---- */
   .fa-masthead{padding:clamp(3rem,6vw,5rem) 0 2rem;}
   .fa-masthead h1{font-size:var(--step-1);max-width:16ch;}
   .fa-masthead p{margin-top:1.4rem;max-width:52ch;color:var(--charcoal-500);font-size:1.05rem;}
@@ -18,7 +17,6 @@
   .fa-index a{font-family:var(--font-mono);font-size:0.76rem;letter-spacing:0.04em;color:var(--charcoal-500);}
   .fa-index a:hover{color:var(--forest-950);}
 
-  /* ---- 01 renewable energy: full-bleed banner ---- */
   .fa-banner{position:relative;height:78vh;min-height:520px;overflow:hidden;color:var(--ivory-50);}
   .fa-banner img{width:100%;height:100%;object-fit:cover;}
   .fa-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(16,28,22,0.85) 0%, rgba(16,28,22,0.05) 55%);}
@@ -29,7 +27,6 @@
   .fa-banner__stats div{font-family:var(--font-display);font-size:1.7rem;}
   .fa-banner__stats span{display:block;font-family:var(--font-mono);font-size:0.66rem;color:var(--sage-300);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.3rem;}
 
-  /* ---- 02 circular economy: split + loop steps ---- */
   .loop-steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:3rem;}
   .loop-step{padding:1.6rem 1.4rem 0;border-left:1px solid var(--line);position:relative;}
   .loop-step:last-child{border-right:1px solid var(--line);}
@@ -38,7 +35,6 @@
   .loop-step p{margin-top:0.4rem;color:var(--charcoal-500);font-size:0.84rem;line-height:1.6;}
   @media (max-width:760px){ .loop-steps{grid-template-columns:1fr 1fr;} }
 
-  /* ---- 03 biotechnology: dark reversed split ---- */
   .fa-bio{display:grid;grid-template-columns:1fr 1fr;background:var(--forest-950);color:var(--ivory-100);}
   .fa-bio__text{padding:clamp(2.5rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center;order:2;}
   .fa-bio__media{position:relative;min-height:420px;order:1;}
@@ -47,7 +43,6 @@
   .fa-bio__text p{margin-top:1.2rem;color:var(--sage-300);max-width:42ch;line-height:1.75;}
   @media (max-width:860px){ .fa-bio{grid-template-columns:1fr;} .fa-bio__media{order:1;min-height:320px;} .fa-bio__text{order:2;} }
 
-  /* ---- 04 environmental science: pull-quote / text-led ---- */
   .fa-quote{display:grid;grid-template-columns:0.4fr 1.6fr;gap:2.5rem;align-items:start;}
   .fa-quote__num{font-family:var(--font-mono);font-size:0.8rem;color:var(--clay-500);padding-top:0.4rem;}
   .fa-quote blockquote{font-family:var(--font-display);font-size:clamp(1.6rem,2.6vw,2.4rem);font-weight:400;line-height:1.32;max-width:26ch;color:var(--forest-950);margin:0;}
@@ -55,23 +50,19 @@
   .fa-quote p{margin-top:1.4rem;color:var(--charcoal-500);max-width:56ch;line-height:1.75;}
   @media (max-width:760px){ .fa-quote{grid-template-columns:1fr;} }
 
-  /* ---- 05 sustainable agriculture: band + two column ---- */
   .fa-two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.6rem;}
   .fa-two-col p{color:var(--charcoal-500);line-height:1.8;font-size:0.98rem;}
   @media (max-width:760px){ .fa-two-col{grid-template-columns:1fr;} }
 
-  /* ---- 06 green engineering: data-forward, no photo ---- */
   .fa-data{background:var(--ivory-100);}
   .fa-data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem;}
   .fa-data-cell__num{font-family:var(--font-display);font-size:clamp(2.4rem,4vw,3.6rem);color:var(--forest-950);}
   .fa-data-cell p{margin-top:0.7rem;color:var(--charcoal-500);font-size:0.92rem;max-width:26ch;line-height:1.6;}
   @media (max-width:760px){ .fa-data-grid{grid-template-columns:1fr;gap:2rem;} }
 
-  /* ---- 07 conservation: split ---- */
   .fa-species-list{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.4rem;}
   .fa-species-list span{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.04em;color:var(--sage-400);border:1px solid var(--line-invert);padding:0.35rem 0.7rem;}
 
-  /* ---- 08 education: closing feature ---- */
   .fa-edu{display:grid;grid-template-columns:1fr 0.85fr;gap:3rem;align-items:center;}
   .fa-edu__media{aspect-ratio:4/5;overflow:hidden;position:relative;}
   .fa-edu__media img{width:100%;height:100%;object-fit:cover;}
@@ -83,7 +74,7 @@
 
 <div class="announce" data-announce-id="symposium2026">
   <div class="announce__row">
-    <span>Registration is open — GSTAM National Symposium on Green Technology, 12–13 Nov, Kuala Lumpur.</span>
+    <span>Registration is open: GSTAM National Symposium on Green Technology, 12–13 Nov, Kuala Lumpur.</span>
     <a href="news-events.html">Details</a>
     <button class="announce__close" aria-label="Dismiss announcement">&times;</button>
   </div>
@@ -153,7 +144,6 @@
     </div>
   </section>
 
-  <!-- 01 Renewable Energy — full bleed banner -->
   <section class="fa-banner" id="energy" data-reveal>
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=2200" alt="Rows of photovoltaic solar panels under open sky">
     <div class="fa-banner__content">
@@ -168,7 +158,6 @@
     </div>
   </section>
 
-  <!-- 02 Recycling & Circular Economy — split + loop -->
   <section class="section" id="circular">
     <div class="container">
       <div class="feature-split" style="background:var(--paper);" data-reveal>
@@ -191,7 +180,6 @@
     </div>
   </section>
 
-  <!-- 03 Biotechnology — dark reversed split -->
   <section class="fa-bio" id="biotech" data-reveal>
     <div class="fa-bio__media">
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/NHGRI%20researcher%20uses%20a%20pipette%20to%20remove%20DNA%20from%20a%20micro%20test%20tube.jpg?width=1200" alt="A researcher extracting a DNA sample with a pipette in a laboratory setting">
@@ -204,7 +192,6 @@
     </div>
   </section>
 
-  <!-- 04 Environmental Science — pull quote -->
   <section class="section" id="science">
     <div class="container">
       <div class="fa-quote" data-reveal>
@@ -218,7 +205,6 @@
     </div>
   </section>
 
-  <!-- 05 Sustainable Agriculture — band + two column -->
   <section class="image-band" id="agriculture" data-reveal>
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Donggongon%20Sabah%20Rice-paddy-02.jpg?width=2200" alt="Terraced rice paddy fields near Donggongon, Sabah">
     <span class="image-band__caption">Rice paddies, Donggongon, Sabah</span>
@@ -233,7 +219,6 @@
     </div>
   </section>
 
-  <!-- 06 Green Engineering — data forward, no photo -->
   <section class="section fa-data" id="engineering">
     <div class="container">
       <span class="eyebrow">06 — Green Engineering</span>
@@ -247,7 +232,6 @@
     </div>
   </section>
 
-  <!-- 07 Conservation — split -->
   <section class="section">
     <div class="container">
       <div class="feature-split" id="conservation" data-reveal>
@@ -266,7 +250,6 @@
     </div>
   </section>
 
-  <!-- 08 Environmental Education — closing feature -->
   <section class="section section--sage" id="education">
     <div class="container">
       <div class="fa-edu">
@@ -283,7 +266,6 @@
     </div>
   </section>
 
-  <!-- closing -->
   <section class="closing">
     <div class="container">
       <h2 data-reveal>See how these fields come together <em>in the field.</em></h2>
