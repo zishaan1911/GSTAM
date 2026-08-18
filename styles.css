@@ -1,12 +1,4 @@
-/* ==========================================================================
-   GSTAM — Green Science and Technology Association Malaysia
-   Design system
-   Type:  Fraunces (display serif, editorial, botanical optical sizing)
-          IBM Plex Sans (body / UI, technical & readable)
-   ========================================================================== */
-
 :root{
-  /* --- colour: deep forest / ivory / earth, restrained --- */
   --forest-950:#101c16;
   --forest-900:#152820;
   --forest-800:#1e372c;
@@ -40,7 +32,7 @@
   --step-body:1.0625rem;
 
   --container:1320px;
-  --gutter:clamp(1.5rem, 4vw, 4rem);
+  --gutter:clamp(1rem, 3.2vw, 4rem);
 
   --ease:cubic-bezier(.16,.8,.24,1);
 }
@@ -114,9 +106,6 @@ p{margin:0;}
 
 .rule{border:none;border-top:1px solid var(--line);margin:0;}
 
-/* ==========================================================================
-   Skip link
-   ========================================================================== */
 .skip-link{
   position:absolute;left:1rem;top:-4rem;
   background:var(--forest-950);color:var(--ivory-50);
@@ -126,9 +115,6 @@ p{margin:0;}
 }
 .skip-link:focus{top:1rem;}
 
-/* ==========================================================================
-   Announcement bar (localStorage dismissal)
-   ========================================================================== */
 .announce{
   background:var(--forest-950);
   color:var(--ivory-100);
@@ -151,9 +137,6 @@ p{margin:0;}
 }
 .announce__close:hover{opacity:1;}
 
-/* ==========================================================================
-   Header / nav
-   ========================================================================== */
 .site-header{
   position:sticky;top:0;z-index:90;
   background:rgba(250,248,241,0.86);
@@ -237,9 +220,12 @@ p{margin:0;}
   .nav-mobile{display:block;}
 }
 
-/* ==========================================================================
-   Buttons / links
-   ========================================================================== */
+@media (max-width:520px){
+  .site-header__row{padding-top:.85rem;padding-bottom:.85rem;gap:1rem;}
+  .brand{font-size:1.1rem;gap:.55rem;}
+  .brand__mark{width:30px;height:30px;}
+}
+
 .btn{
   display:inline-flex;align-items:center;gap:0.6rem;
   font-size:0.88rem;padding:0.85rem 1.5rem;
@@ -261,16 +247,10 @@ p{margin:0;}
 .text-link svg{width:14px;height:14px;transition:transform .25s var(--ease);}
 .text-link:hover svg{transform:translateX(4px);}
 
-/* ==========================================================================
-   Contour motif (signature element)
-   ========================================================================== */
 .contour{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
 .contour svg{width:100%;height:100%;}
 .contour path{fill:none;stroke:currentColor;stroke-width:1;}
 
-/* ==========================================================================
-   Hero
-   ========================================================================== */
 .hero{
   position:relative;
   min-height:92vh;
@@ -322,9 +302,6 @@ p{margin:0;}
 @keyframes scrollLine{ to{top:100%;} }
 @media (prefers-reduced-motion:reduce){ .hero__scroll-line::after{animation:none;top:0;} }
 
-/* ==========================================================================
-   Section scaffolding
-   ========================================================================== */
 section{position:relative;}
 .section{padding:clamp(4.5rem,8vw,8rem) 0;}
 .section--tight{padding:clamp(3rem,5vw,5rem) 0;}
@@ -339,21 +316,15 @@ section{position:relative;}
 .section-head h2{font-size:var(--step-2);max-width:14ch;}
 .section-head p{color:var(--charcoal-500);max-width:42ch;font-size:1.02rem;}
 @media (max-width:800px){
-  .section-head{grid-template-columns:1fr;gap:1.2rem;}
+  .section-head{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2.5rem;}
 }
 
-/* ==========================================================================
-   Reveal-on-scroll
-   ========================================================================== */
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
 [data-reveal].is-visible{opacity:1;transform:translateY(0);}
 [data-reveal-delay="1"]{transition-delay:.12s;}
 [data-reveal-delay="2"]{transition-delay:.24s;}
 [data-reveal-delay="3"]{transition-delay:.36s;}
 
-/* ==========================================================================
-   Purpose statement (home)
-   ========================================================================== */
 .statement{
   display:grid;grid-template-columns:0.5fr 1.5fr;gap:3rem;
   padding-top:clamp(4rem,7vw,6rem);padding-bottom:clamp(4rem,7vw,6rem);
@@ -363,9 +334,6 @@ section{position:relative;}
 .statement__aside{align-self:end;color:var(--charcoal-500);max-width:36ch;font-size:0.98rem;}
 @media (max-width:800px){ .statement{grid-template-columns:1fr;} }
 
-/* ==========================================================================
-   Focus areas (asymmetric list)
-   ========================================================================== */
 .focus-list{border-top:1px solid var(--line);}
 .focus-item{
   border-bottom:1px solid var(--line);
@@ -387,9 +355,6 @@ section{position:relative;}
   .focus-item__desc{grid-area:desc;} .focus-item__link{grid-area:link;justify-self:start;}
 }
 
-/* ==========================================================================
-   Featured initiative (editorial image + text split)
-   ========================================================================== */
 .feature-split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;}
 .feature-split__media{position:relative;overflow:hidden;min-height:420px;}
 .feature-split__media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
@@ -402,11 +367,12 @@ section{position:relative;}
 .feature-split__text h3{font-size:var(--step-2);color:var(--ivory-50);max-width:14ch;}
 .feature-split__text p{color:var(--sage-300);max-width:40ch;line-height:1.7;}
 .feature-split__meta{display:flex;gap:2rem;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage-400);}
-@media (max-width:860px){ .feature-split{grid-template-columns:1fr;} .feature-split__media{min-height:320px;} }
+@media (max-width:860px){
+  .feature-split{grid-template-columns:1fr;}
+  .feature-split__media{min-height:320px;}
+  .feature-split__text{padding:clamp(2rem,7vw,3.5rem);}
+}
 
-/* ==========================================================================
-   Edge-to-edge editorial image band
-   ========================================================================== */
 .image-band{position:relative;height:64vh;min-height:420px;overflow:hidden;}
 .image-band img{width:100%;height:100%;object-fit:cover;}
 .image-band__caption{
@@ -417,19 +383,16 @@ section{position:relative;}
   text-shadow:0 1px 6px rgba(0,0,0,0.4);
 }
 
-/* ==========================================================================
-   Research / stat highlight
-   ========================================================================== */
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
 .stat-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.4rem 1.8rem;}
 .stat-cell__num{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.4rem);color:var(--forest-950);display:flex;align-items:baseline;gap:0.15em;}
 .stat-cell__num sup{font-size:0.4em;color:var(--clay-500);font-family:var(--font-mono);}
 .stat-cell__label{margin-top:0.6rem;color:var(--charcoal-500);font-size:0.86rem;max-width:22ch;}
-@media (max-width:820px){ .stat-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:820px){
+  .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .stat-cell{padding:2rem 1.25rem;}
+}
 
-/* ==========================================================================
-   Research highlight split
-   ========================================================================== */
 .research-highlight{display:grid;grid-template-columns:0.9fr 1.1fr;gap:4rem;align-items:center;}
 .research-highlight__media{position:relative;aspect-ratio:4/5;overflow:hidden;}
 .research-highlight__media img{width:100%;height:100%;object-fit:cover;}
@@ -438,11 +401,11 @@ section{position:relative;}
   background:var(--paper);padding:0.4rem 0.8rem;
   font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;
 }
-@media (max-width:860px){ .research-highlight{grid-template-columns:1fr;gap:2rem;} }
+@media (max-width:860px){
+  .research-highlight{grid-template-columns:1fr;gap:2rem;}
+  .research-highlight__media{aspect-ratio:16/10;}
+}
 
-/* ==========================================================================
-   Video section
-   ========================================================================== */
 .video-block{position:relative;aspect-ratio:16/8.2;background:var(--charcoal-900);overflow:hidden;}
 .video-block iframe{width:100%;height:100%;border:0;}
 .video-block__poster{position:absolute;inset:0;cursor:pointer;background:none;border:0;padding:0;width:100%;}
@@ -458,9 +421,6 @@ section{position:relative;}
 .video-block__poster:hover .video-block__play{transform:translate(-50%,-50%) scale(1.08);}
 .video-block__play svg{width:22px;height:22px;margin-left:3px;}
 
-/* ==========================================================================
-   News list
-   ========================================================================== */
 .news-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;}
 .news-feature{position:relative;}
 .news-feature__media{aspect-ratio:16/11;overflow:hidden;position:relative;}
@@ -475,11 +435,10 @@ section{position:relative;}
 .news-row__media{aspect-ratio:1/1;overflow:hidden;}
 .news-row__media img{width:100%;height:100%;object-fit:cover;}
 .news-row h4{font-size:1.02rem;font-family:var(--font-display);font-weight:500;max-width:26ch;}
-@media (max-width:860px){ .news-grid{grid-template-columns:1fr;} }
+@media (max-width:860px){
+  .news-grid{grid-template-columns:1fr;gap:2.25rem;}
+}
 
-/* ==========================================================================
-   Closing statement
-   ========================================================================== */
 .closing{
   background:var(--forest-950);color:var(--ivory-50);
   padding:clamp(5rem,9vw,9rem) 0;
@@ -492,9 +451,6 @@ section{position:relative;}
 .closing h2 em{color:var(--sage-300);font-style:italic;}
 .closing .btn{margin-top:2.4rem;}
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
 .site-footer{background:var(--forest-950);color:var(--sage-300);}
 .footer-top{
   padding:4.5rem 0 3rem;
@@ -529,13 +485,10 @@ section{position:relative;}
 .footer-bottom a{color:var(--sage-400);}
 .footer-bottom a:hover{color:var(--ivory-50);}
 @media (max-width:900px){
-  .footer-top{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;}
   .footer-brand{grid-column:1/-1;}
 }
 
-/* ==========================================================================
-   Cookie consent
-   ========================================================================== */
 .cookie-bar{
   position:fixed;left:1.2rem;right:1.2rem;bottom:1.2rem;z-index:200;
   max-width:520px;margin:0 auto;
@@ -554,9 +507,6 @@ section{position:relative;}
 }
 .cookie-bar__actions .cookie-accept{background:var(--ivory-100);color:var(--forest-950);border-color:var(--ivory-100);}
 
-/* ==========================================================================
-   Utility
-   ========================================================================== */
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 .mt-0{margin-top:0;}
 .back-to-top{
@@ -568,3 +518,214 @@ section{position:relative;}
   transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
 }
 .back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0);}
+
+@media (max-width:680px){
+  .hero{
+    min-height:clamp(620px,88svh,820px);
+  }
+
+  .hero__content{
+    padding-bottom:2.75rem;
+  }
+
+  .hero__title{
+    max-width:12ch;
+  }
+
+  .hero__foot{
+    align-items:flex-start;
+    gap:1.5rem;
+    margin-top:2rem;
+    padding-top:1.25rem;
+  }
+
+  .hero__statement{
+    max-width:34ch;
+  }
+
+  .statement{
+    gap:1.75rem;
+  }
+
+  .focus-item{
+    padding:1.45rem 0;
+  }
+
+  .focus-item__title{
+    font-size:1.3rem;
+  }
+
+  .image-band{
+    height:48svh;
+    min-height:320px;
+  }
+
+  .image-band__caption{
+    left:var(--gutter);
+    right:var(--gutter);
+    bottom:1rem;
+  }
+
+  .video-block{
+    aspect-ratio:16/10;
+  }
+
+  .video-block__play{
+    width:64px;
+    height:64px;
+  }
+
+  .news-row{
+    grid-template-columns:78px minmax(0,1fr);
+    gap:1rem;
+  }
+
+  .closing{
+    padding-left:var(--gutter);
+    padding-right:var(--gutter);
+  }
+
+  .cookie-bar{
+    left:var(--gutter);
+    right:var(--gutter);
+    bottom:1rem;
+    padding:1.25rem;
+  }
+}
+
+@media (max-width:520px){
+  .section{
+    padding-top:clamp(3.5rem,12vw,5rem);
+    padding-bottom:clamp(3.5rem,12vw,5rem);
+  }
+
+  .section--tight{
+    padding-top:2.5rem;
+    padding-bottom:2.5rem;
+  }
+
+  .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .feature-split__media{
+    min-height:260px;
+  }
+
+  .feature-split__text{
+    padding:2rem var(--gutter);
+  }
+
+  .feature-split__meta{
+    flex-wrap:wrap;
+    gap:.75rem 1.25rem;
+  }
+
+  .stat-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stat-cell{
+    padding:1.5rem 1.1rem;
+  }
+
+  .research-highlight__media{
+    aspect-ratio:4/3;
+  }
+
+  .news-row{
+    grid-template-columns:64px minmax(0,1fr);
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    padding-top:3.5rem;
+  }
+
+  .footer-brand{
+    grid-column:auto;
+  }
+
+  .footer-bottom{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .nav-mobile{
+    padding-left:var(--gutter);
+    padding-right:var(--gutter);
+  }
+
+  .nav-mobile a{
+    font-size:clamp(1.65rem,7vw,2rem);
+  }
+}
+
+@media (max-width:360px){
+  .brand__word span{
+    display:none;
+  }
+
+  .hero__title{
+    font-size:clamp(2.5rem,15vw,3.5rem);
+  }
+}
+
+.announce__row{
+  flex-wrap:wrap;
+}
+
+.announce__row > span{
+  min-width:0;
+}
+
+@media (max-width:520px){
+  .announce{
+    max-height:72px;
+  }
+
+  .announce__row{
+    justify-content:center;
+    gap:.35rem .7rem;
+    padding:.55rem var(--gutter);
+    line-height:1.35;
+  }
+
+  .announce__row > span{
+    flex:1 1 100%;
+  }
+
+  .announce__row a{
+    flex:0 0 auto;
+  }
+
+  .announce__close{
+    flex:0 0 auto;
+  }
+
+  .footer-top{
+    margin-left:var(--gutter);
+    margin-right:var(--gutter);
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .footer-bottom{
+    margin-left:var(--gutter);
+    margin-right:var(--gutter);
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
+@media (max-width:360px){
+  .announce{
+    max-height:86px;
+  }
+
+  .announce__row{
+    padding-left:.8rem;
+    padding-right:.8rem;
+  }
+}
