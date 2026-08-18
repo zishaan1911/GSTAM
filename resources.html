@@ -14,7 +14,6 @@
   .res2-masthead h1{font-size:var(--step-1);max-width:16ch;}
   .res2-masthead p{margin-top:1.3rem;max-width:50ch;color:var(--charcoal-500);font-size:1.02rem;}
 
-  /* video grid */
   .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
   .video-grid .video-block{aspect-ratio:16/11;}
   .video-grid figcaption{margin-top:0.9rem;}
@@ -22,7 +21,6 @@
   .video-grid figcaption p{margin-top:0.3rem;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--clay-500);}
   @media (max-width:900px){ .video-grid{grid-template-columns:1fr;} }
 
-  /* reports */
   .report-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
   .report-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.2rem;display:flex;flex-direction:column;gap:0.9rem;}
   .report-cell__type{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--clay-500);}
@@ -30,14 +28,12 @@
   .report-cell a{font-size:0.85rem;border-bottom:1px solid currentColor;align-self:flex-start;}
   @media (max-width:700px){ .report-grid{grid-template-columns:1fr;} }
 
-  /* external links */
   .link-list{border-top:1px solid var(--line);}
   .link-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--line);}
   .link-row__name{font-family:var(--font-display);font-size:1.05rem;color:var(--forest-950);}
   .link-row__desc{color:var(--charcoal-500);font-size:0.85rem;margin-top:0.25rem;}
   .link-row svg{width:14px;height:14px;flex:none;}
 
-  /* photo library */
   .photo-filter{display:flex;flex-wrap:wrap;gap:0.6rem;padding:1.6rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px;background:var(--line);}
   .photo-item{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--forest-950);transition:opacity .3s var(--ease);}
@@ -110,7 +106,6 @@
 
 <main id="main">
 
-  <!-- ===================== Masthead ===================== -->
   <section class="res2-masthead">
     <div class="container">
       <span class="eyebrow">Resources &amp; Media</span>
@@ -119,7 +114,6 @@
     </div>
   </section>
 
-  <!-- ===================== Video library ===================== -->
   <section class="section section--tight">
     <div class="container">
       <div class="section-head">
@@ -167,7 +161,6 @@
     </div>
   </section>
 
-  <!-- ===================== Guides & reports ===================== -->
   <section class="section">
     <div class="container">
       <div class="section-head">
@@ -199,7 +192,6 @@
     </div>
   </section>
 
-  <!-- ===================== External resources ===================== -->
   <section class="section section--tight">
     <div class="container">
       <div class="section-head">
@@ -227,7 +219,6 @@
     </div>
   </section>
 
-  <!-- ===================== Photo library ===================== -->
   <section class="section">
     <div class="container">
       <div class="section-head">
@@ -296,7 +287,6 @@
     </div>
   </section>
 
-  <!-- ===================== Closing ===================== -->
   <section class="closing">
     <div class="container">
       <h2 data-reveal>Need something for a <em>class</em> or <em>story</em>?</h2>
@@ -361,7 +351,7 @@
 
 <script src="main.js"></script>
 <script>
-  /* ---- photo library filtering (sessionStorage: temporary, per-session UI state) ---- */
+  
   (function(){
     "use strict";
     var buttons = document.querySelectorAll('.photo-filter .filter-btn');
