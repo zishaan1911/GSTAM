@@ -19,12 +19,10 @@
   --line:rgba(28,27,24,0.13);
   --line-invert:rgba(248,246,238,0.18);
 
-  /* --- type --- */
   --font-display:'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-body:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:'IBM Plex Mono', monospace;
 
-  /* --- scale --- */
   --step-1:clamp(2.6rem, 1.7rem + 3.6vw, 5.4rem);
   --step-2:clamp(1.9rem, 1.4rem + 2vw, 3.2rem);
   --step-3:clamp(1.4rem, 1.15rem + 1vw, 2rem);
@@ -106,6 +104,9 @@ p{margin:0;}
 
 .rule{border:none;border-top:1px solid var(--line);margin:0;}
 
+/* ==========================================================================
+   Skip link
+   ========================================================================== */
 .skip-link{
   position:absolute;left:1rem;top:-4rem;
   background:var(--forest-950);color:var(--ivory-50);
@@ -115,6 +116,9 @@ p{margin:0;}
 }
 .skip-link:focus{top:1rem;}
 
+/* ==========================================================================
+   Announcement bar (localStorage dismissal)
+   ========================================================================== */
 .announce{
   background:var(--forest-950);
   color:var(--ivory-100);
@@ -405,7 +409,6 @@ section{position:relative;}
   .research-highlight{grid-template-columns:1fr;gap:2rem;}
   .research-highlight__media{aspect-ratio:16/10;}
 }
-
 .video-block{position:relative;aspect-ratio:16/8.2;background:var(--charcoal-900);overflow:hidden;}
 .video-block iframe{width:100%;height:100%;border:0;}
 .video-block__poster{position:absolute;inset:0;cursor:pointer;background:none;border:0;padding:0;width:100%;}
@@ -453,7 +456,7 @@ section{position:relative;}
 
 .site-footer{background:var(--forest-950);color:var(--sage-300);}
 .footer-top{
-  padding:4.5rem 0 3rem;
+  padding:4.5rem var(--gutter) 3rem;
   display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 0.8fr 1fr;gap:2.5rem;
   border-bottom:1px solid var(--line-invert);
 }
@@ -705,10 +708,8 @@ section{position:relative;}
   }
 
   .footer-top{
-    margin-left:var(--gutter);
-    margin-right:var(--gutter);
-    padding-left:0;
-    padding-right:0;
+    margin-left:auto;
+    margin-right:auto;
   }
 
   .footer-bottom{
