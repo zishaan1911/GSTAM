@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources &amp; Media — GSTAM</title>
+<meta name="description" content="Videos, downloadable guides, reports and photography from Green Science and Technology Association Malaysia, plus trusted external references.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .res2-masthead{padding:clamp(3rem,6vw,5rem) 0 2.5rem;}
+  .res2-masthead h1{font-size:var(--step-1);max-width:16ch;}
+  .res2-masthead p{margin-top:1.3rem;max-width:50ch;color:var(--charcoal-500);font-size:1.02rem;}
+
+  /* video grid */
+  .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+  .video-grid .video-block{aspect-ratio:16/11;}
+  .video-grid figcaption{margin-top:0.9rem;}
+  .video-grid figcaption h4{font-family:var(--font-display);font-size:1.05rem;color:var(--forest-950);max-width:26ch;font-weight:500;}
+  .video-grid figcaption p{margin-top:0.3rem;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--clay-500);}
+  @media (max-width:900px){ .video-grid{grid-template-columns:1fr;} }
+
+  /* reports */
+  .report-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .report-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.2rem;display:flex;flex-direction:column;gap:0.9rem;}
+  .report-cell__type{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--clay-500);}
+  .report-cell__title{font-family:var(--font-display);font-size:1.15rem;color:var(--forest-950);max-width:30ch;}
+  .report-cell a{font-size:0.85rem;border-bottom:1px solid currentColor;align-self:flex-start;}
+  @media (max-width:700px){ .report-grid{grid-template-columns:1fr;} }
+
+  /* external links */
+  .link-list{border-top:1px solid var(--line);}
+  .link-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--line);}
+  .link-row__name{font-family:var(--font-display);font-size:1.05rem;color:var(--forest-950);}
+  .link-row__desc{color:var(--charcoal-500);font-size:0.85rem;margin-top:0.25rem;}
+  .link-row svg{width:14px;height:14px;flex:none;}
+
+  /* photo library */
+  .photo-filter{display:flex;flex-wrap:wrap;gap:0.6rem;padding:1.6rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px;background:var(--line);}
+  .photo-item{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--forest-950);transition:opacity .3s var(--ease);}
+  .photo-item.is-filtered-out{display:none;}
+  .photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+  .photo-item:hover img{transform:scale(1.06);}
+  .photo-item__cap{
+    position:absolute;left:0;right:0;bottom:0;padding:0.8rem;
+    background:linear-gradient(180deg,rgba(16,28,22,0) 0%,rgba(16,28,22,0.72) 100%);
+    color:var(--ivory-50);font-size:0.74rem;line-height:1.4;
+    opacity:0;transition:opacity .3s var(--ease);
+  }
+  .photo-item:hover .photo-item__cap{opacity:1;}
+  @media (max-width:820px){ .photo-grid{grid-template-columns:repeat(2,1fr);} }
+</style>
+</head>
+<body data-page-title="Resources &amp; Media">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce" data-announce-id="symposium2026">
+  <div class="announce__row">
+    <span>Registration is open — GSTAM National Symposium on Green Technology, 12–13 Nov, Kuala Lumpur.</span>
+    <a href="news-events.html">Details</a>
+    <button class="announce__close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__row">
+    <a href="index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 4C20 4 8 12 8 23C8 30.2 13.4 36 20 36C26.6 36 32 30.2 32 23C32 12 20 4 20 4Z" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 36V16" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 22C20 22 14 20 12 14" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M20 27C20 27 27 25 29 18" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <span class="brand__word"><b>GSTAM</b><span>Green Science &amp; Technology Assoc. Malaysia</span></span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="focus-areas.html">Focus Areas</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="news-events.html">News &amp; Events</a>
+      <a href="resources.html" aria-current="page">Resources</a>
+    </nav>
+    <a href="contact.html" class="nav-cta is-desktop">Contact GSTAM</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-mobile" id="mobile-menu">
+  <div class="nav-mobile__top">
+    <span class="brand"><span class="brand__word"><b>GSTAM</b></span></span>
+    <button class="nav-mobile__close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="focus-areas.html">Focus Areas</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="nav-mobile__foot">Petaling Jaya, Selangor, Malaysia<br>info@gstam.org.my</p>
+</div>
+
+<main id="main">
+
+  <!-- ===================== Masthead ===================== -->
+  <section class="res2-masthead">
+    <div class="container">
+      <span class="eyebrow">Resources &amp; Media</span>
+      <h1 data-reveal>Explainers, guides and photography — free to use, easy to share.</h1>
+      <p data-reveal data-reveal-delay="1">A working library for teachers, journalists and members: short videos, downloadable guides, and field photography from GSTAM's programmes.</p>
+    </div>
+  </section>
+
+  <!-- ===================== Video library ===================== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Watch</h2>
+        <p data-reveal>Short, well-sourced explainers we point members and students to most often.</p>
+      </div>
+      <div class="video-grid" data-reveal>
+        <figure>
+          <div class="video-block" data-yt-id="xKxrkht7CpY">
+            <button class="video-block__poster" aria-label="Play video: How do solar panels work?">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=800" alt="">
+              <span class="video-block__play"><svg viewBox="0 0 24 24" fill="var(--forest-950)"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </div>
+          <figcaption>
+            <h4>How do solar panels work?</h4>
+            <p>TED-Ed</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="video-block" data-yt-id="_6xlNyWPpB8">
+            <button class="video-block__poster" aria-label="Play video: What really happens to the plastic you throw away">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Material%20recovery%20facility%202004-03-24.jpg?width=800" alt="">
+              <span class="video-block__play"><svg viewBox="0 0 24 24" fill="var(--forest-950)"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </div>
+          <figcaption>
+            <h4>What really happens to the plastic you throw away</h4>
+            <p>TED-Ed</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="video-block" data-yt-id="jAhjPd4uNFY">
+            <button class="video-block__poster" aria-label="Play video: Genetic Engineering Will Change Everything Forever – CRISPR">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Researchers%20in%20laboratory.jpg?width=800" alt="">
+              <span class="video-block__play"><svg viewBox="0 0 24 24" fill="var(--forest-950)"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </div>
+          <figcaption>
+            <h4>Genetic Engineering Will Change Everything Forever — CRISPR</h4>
+            <p>Kurzgesagt</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Guides & reports ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Guides &amp; reports</h2>
+        <p data-reveal>Practical, plain-language resources for schools, communities and members.</p>
+      </div>
+      <div class="report-grid" data-reveal>
+        <div class="report-cell">
+          <span class="report-cell__type">Guide — PDF</span>
+          <span class="report-cell__title">Home Solar Readiness Checklist</span>
+          <a href="#">Download</a>
+        </div>
+        <div class="report-cell">
+          <span class="report-cell__type">Starter kit — PDF</span>
+          <span class="report-cell__title">School Recycling Programme Starter Kit</span>
+          <a href="#">Download</a>
+        </div>
+        <div class="report-cell">
+          <span class="report-cell__type">Field guide — PDF</span>
+          <span class="report-cell__title">Community Mangrove Planting Field Guide</span>
+          <a href="#">Download</a>
+        </div>
+        <div class="report-cell">
+          <span class="report-cell__type">Annual report — PDF</span>
+          <span class="report-cell__title">GSTAM Annual Report 2025</span>
+          <a href="#">Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== External resources ===================== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>External references</h2>
+        <p data-reveal>Bodies we cite regularly and recommend for further reading.</p>
+      </div>
+      <div class="link-list" data-reveal>
+        <a class="link-row" href="https://www.irena.org/" target="_blank" rel="noopener">
+          <div><div class="link-row__name">International Renewable Energy Agency (IRENA)</div><div class="link-row__desc">Global renewable-energy data, statistics and policy analysis.</div></div>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg>
+        </a>
+        <a class="link-row" href="https://www.ipcc.ch/" target="_blank" rel="noopener">
+          <div><div class="link-row__name">Intergovernmental Panel on Climate Change (IPCC)</div><div class="link-row__desc">Assessment reports on the science of climate change.</div></div>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg>
+        </a>
+        <a class="link-row" href="https://www.mgtc.gov.my/" target="_blank" rel="noopener">
+          <div><div class="link-row__name">Malaysian Green Technology and Climate Change Centre (MGTC)</div><div class="link-row__desc">National green-technology programmes and financing schemes.</div></div>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg>
+        </a>
+        <a class="link-row" href="https://www.met.gov.my/" target="_blank" rel="noopener">
+          <div><div class="link-row__name">Malaysian Meteorological Department</div><div class="link-row__desc">National weather, climate and solar-irradiance data.</div></div>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Photo library ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Photo library</h2>
+        <p data-reveal>Field photography from GSTAM programmes. Credited use permitted — contact us for full resolution.</p>
+      </div>
+
+      <div class="photo-filter" data-reveal>
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="field">Field &amp; ecosystems</button>
+        <button class="filter-btn" data-filter="lab">Lab &amp; research</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+        <button class="filter-btn" data-filter="energy">Energy &amp; infrastructure</button>
+      </div>
+
+      <div class="photo-grid" data-reveal>
+        <div class="photo-item" data-category="field">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Borneo%20rainforest.jpg?width=700" alt="Mist rising through a dense Bornean rainforest canopy">
+          <span class="photo-item__cap">Bornean rainforest canopy at dawn</span>
+        </div>
+        <div class="photo-item" data-category="field">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mossy%20Forest%20in%20Cameron%20Highland.jpg?width=700" alt="Mossy montane forest at Cameron Highlands">
+          <span class="photo-item__cap">Mossy forest, Cameron Highlands</span>
+        </div>
+        <div class="photo-item" data-category="field">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=700" alt="Mangrove forest at Matang Forest Reserve, Perak">
+          <span class="photo-item__cap">Matang Mangrove Forest Reserve, Perak</span>
+        </div>
+        <div class="photo-item" data-category="field">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Proboscis%20Monkey%20with%20baby%20crossing%20a%20rope%20bridge%20across%20a%20river%20in%20Borneo%20Malaysia.JPG?width=700" alt="Proboscis monkey with baby, Borneo, Malaysia">
+          <span class="photo-item__cap">Proboscis monkey, Sabah monitoring site</span>
+        </div>
+        <div class="photo-item" data-category="field">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tropical%20Forest%20Morning%20at%20FRIM%2C%20Malaysia.jpg?width=700" alt="Morning light in the tropical forest research canopy at FRIM">
+          <span class="photo-item__cap">Morning canopy, FRIM research forest</span>
+        </div>
+        <div class="photo-item" data-category="lab">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bangunan%20Makmal%20Fakulti%20Sains%20dan%20Teknologi%20UKM.jpg?width=700" alt="Laboratory building, Faculty of Science and Technology, UKM">
+          <span class="photo-item__cap">UKM Faculty of Science &amp; Technology labs</span>
+        </div>
+        <div class="photo-item" data-category="lab">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Researchers%20in%20laboratory.jpg?width=700" alt="Researchers examining samples in a laboratory">
+          <span class="photo-item__cap">Sample analysis in a partner laboratory</span>
+        </div>
+        <div class="photo-item" data-category="community">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tree%20planting%20with%20APE%20Malaysia.jpg?width=700" alt="Volunteers planting tree saplings in Malaysia">
+          <span class="photo-item__cap">Community reforestation planting day</span>
+        </div>
+        <div class="photo-item" data-category="community">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Donggongon%20Sabah%20Rice-paddy-02.jpg?width=700" alt="Terraced rice paddies in Sabah, Malaysia">
+          <span class="photo-item__cap">Low-input rice trial site, Sabah</span>
+        </div>
+        <div class="photo-item" data-category="energy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=700" alt="Technicians inspecting a large-scale solar panel array">
+          <span class="photo-item__cap">Utility-scale solar array inspection</span>
+        </div>
+        <div class="photo-item" data-category="energy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Rooftop%20Solar%20System%20of%20Delhi%20Metro%20at%20the%20Welcome%20Metro%20Station%20of%20Delhi%20Metro.jpg?width=700" alt="Rooftop solar installation at a metro station">
+          <span class="photo-item__cap">Reference case: transit-hub rooftop solar</span>
+        </div>
+        <div class="photo-item" data-category="energy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Material%20recovery%20facility%202004-03-24.jpg?width=700" alt="Sorted recyclable materials at a recovery facility">
+          <span class="photo-item__cap">Sorting line, materials-recovery facility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Closing ===================== -->
+  <section class="closing">
+    <div class="container">
+      <h2 data-reveal>Need something for a <em>class</em> or <em>story</em>?</h2>
+      <a href="contact.html" class="btn btn--invert" data-reveal data-reveal-delay="1">Request media assistance</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <span class="brand"><span class="brand__word"><b>GSTAM</b></span></span>
+      <p>Green Science and Technology Association Malaysia — research, education and field action for a resilient environment.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="about.html">About</a>
+      <a href="focus-areas.html">Focus Areas</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <a href="news-events.html">News &amp; Events</a>
+      <a href="resources.html">Media &amp; Reports</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="https://www.linkedin.com">LinkedIn</a>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.youtube.com">YouTube</a>
+    </div>
+    <div class="footer-col footer-newsletter">
+      <h5>Stay informed</h5>
+      <form onsubmit="return false;">
+        <label for="footer-email" class="visually-hidden">Email address</label>
+        <input id="footer-email" type="email" placeholder="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="footer-note">Occasional updates. Unsubscribe anytime.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span data-current-year>2026</span> Green Science and Technology Association Malaysia</span>
+    <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<div class="cookie-bar" role="dialog" aria-label="Cookie preferences">
+  <p>We use cookies to remember your preferences and understand site usage. Read our <a href="#">privacy policy</a>.</p>
+  <div class="cookie-bar__actions">
+    <button class="cookie-accept">Accept</button>
+    <button class="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.4"/></svg>
+</button>
+
+<script src="main.js"></script>
+<script>
+  /* ---- photo library filtering (sessionStorage: temporary, per-session UI state) ---- */
+  (function(){
+    "use strict";
+    var buttons = document.querySelectorAll('.photo-filter .filter-btn');
+    var items = document.querySelectorAll('.photo-item');
+    var STORAGE_KEY = 'gstam_photo_filter';
+
+    function applyFilter(filter){
+      items.forEach(function(item){
+        var match = (filter === 'all') || (item.getAttribute('data-category') === filter);
+        item.classList.toggle('is-filtered-out', !match);
+      });
+      buttons.forEach(function(btn){
+        btn.classList.toggle('is-active', btn.getAttribute('data-filter') === filter);
+      });
+      try{ sessionStorage.setItem(STORAGE_KEY, filter); }catch(e){}
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){ applyFilter(btn.getAttribute('data-filter')); });
+    });
+
+    var saved = null;
+    try{ saved = sessionStorage.getItem(STORAGE_KEY); }catch(e){}
+    applyFilter(saved || 'all');
+  })();
+</script>
+</body>
+</html>
