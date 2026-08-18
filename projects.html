@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects &amp; Initiatives — GSTAM</title>
+<meta name="description" content="A portfolio of GSTAM's active and completed field projects across renewable energy, circular economy, biotechnology, conservation and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .proj-masthead{padding:clamp(3rem,6vw,5rem) 0 2.5rem;}
+  .proj-masthead h1{font-size:var(--step-1);max-width:16ch;}
+  .proj-masthead p{margin-top:1.3rem;max-width:50ch;color:var(--charcoal-500);font-size:1.02rem;}
+
+  .filter-bar{
+    display:flex;flex-wrap:wrap;gap:0.6rem;
+    padding:1.6rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .filter-btn{
+    font-family:var(--font-mono);font-size:0.74rem;letter-spacing:0.04em;text-transform:uppercase;
+    padding:0.5rem 0.95rem;border:1px solid var(--line);background:none;color:var(--charcoal-700);cursor:pointer;
+    transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
+  }
+  .filter-btn:hover{border-color:var(--forest-950);}
+  .filter-btn.is-active{background:var(--forest-950);color:var(--ivory-50);border-color:var(--forest-950);}
+  .filter-count{font-family:var(--font-mono);font-size:0.78rem;color:var(--charcoal-500);margin-left:auto;align-self:center;}
+
+  .project-list{padding-top:1rem;}
+  .project-entry{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.2rem;
+    padding:4rem 0;border-bottom:1px solid var(--line);
+    align-items:center;
+    transition:opacity .3s var(--ease), transform .3s var(--ease);
+  }
+  .project-entry.is-filtered-out{display:none;}
+  .project-entry:nth-child(even){grid-template-columns:0.85fr 1.15fr;}
+  .project-entry:nth-child(even) .project-media{order:2;}
+  .project-entry:nth-child(even) .project-copy{order:1;}
+  .project-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+  .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
+  .project-entry:hover .project-media img{transform:scale(1.04);}
+  .project-tag{
+    position:absolute;top:1rem;left:1rem;background:var(--paper);
+    font-family:var(--font-mono);font-size:0.66rem;letter-spacing:0.06em;text-transform:uppercase;
+    padding:0.35rem 0.7rem;
+  }
+  .project-copy h3{font-size:var(--step-3);max-width:20ch;color:var(--forest-950);}
+  .project-meta-row{display:flex;flex-wrap:wrap;gap:1.4rem;margin:0.9rem 0 1.2rem;font-family:var(--font-mono);font-size:0.74rem;color:var(--clay-500);text-transform:uppercase;letter-spacing:0.03em;}
+  .project-meta-row span{display:flex;align-items:center;gap:0.4em;}
+  .project-copy p{color:var(--charcoal-500);line-height:1.75;max-width:52ch;}
+  @media (max-width:820px){
+    .project-entry, .project-entry:nth-child(even){grid-template-columns:1fr;gap:1.4rem;}
+    .project-entry:nth-child(even) .project-media, .project-entry:nth-child(even) .project-copy{order:initial;}
+  }
+</style>
+</head>
+<body data-page-title="Projects & Initiatives">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce" data-announce-id="symposium2026">
+  <div class="announce__row">
+    <span>Registration is open — GSTAM National Symposium on Green Technology, 12–13 Nov, Kuala Lumpur.</span>
+    <a href="news-events.html">Details</a>
+    <button class="announce__close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__row">
+    <a href="index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 4C20 4 8 12 8 23C8 30.2 13.4 36 20 36C26.6 36 32 30.2 32 23C32 12 20 4 20 4Z" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 36V16" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 22C20 22 14 20 12 14" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M20 27C20 27 27 25 29 18" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <span class="brand__word"><b>GSTAM</b><span>Green Science &amp; Technology Assoc. Malaysia</span></span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="focus-areas.html">Focus Areas</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="news-events.html">News &amp; Events</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+    <a href="contact.html" class="nav-cta is-desktop">Contact GSTAM</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-mobile" id="mobile-menu">
+  <div class="nav-mobile__top">
+    <span class="brand"><span class="brand__word"><b>GSTAM</b></span></span>
+    <button class="nav-mobile__close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="focus-areas.html">Focus Areas</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="nav-mobile__foot">Petaling Jaya, Selangor, Malaysia<br>info@gstam.org.my</p>
+</div>
+
+<main id="main">
+
+  <section class="proj-masthead">
+    <div class="container">
+      <span class="eyebrow">Projects &amp; Initiatives</span>
+      <h1 style="margin-top:1.1rem;" data-reveal>Fieldwork, not just findings.</h1>
+      <p data-reveal>A working archive of GSTAM's active and completed projects — where they happen, who they're with, and what they've produced.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="filter-bar" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn is-active" data-filter="all">All projects</button>
+      <button class="filter-btn" data-filter="energy">Energy</button>
+      <button class="filter-btn" data-filter="circular">Circular Economy</button>
+      <button class="filter-btn" data-filter="biotech">Biotechnology</button>
+      <button class="filter-btn" data-filter="science">Environmental Science</button>
+      <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+      <button class="filter-btn" data-filter="conservation">Conservation</button>
+      <button class="filter-btn" data-filter="education">Education</button>
+      <span class="filter-count" data-filter-count></span>
+    </div>
+  </section>
+
+  <section class="container project-list" id="project-list">
+
+    <article class="project-entry" data-category="conservation">
+      <div class="project-media">
+        <span class="project-tag">Conservation</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=1200" alt="Aerial view of the Matang Mangrove Forest Reserve, Perak">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Matang Mangrove Carbon &amp; Biodiversity Programme</h3>
+        <div class="project-meta-row"><span>Perak</span><span>Since 2019</span><span>Ongoing</span></div>
+        <p>Long-term monitoring of carbon sequestration and fisheries recovery across the Matang Mangrove Forest Reserve, run jointly with the Perak Forestry Department.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="energy">
+      <div class="project-media">
+        <span class="project-tag">Renewable Energy</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bruce%20A.%20Henry%20Solar%20Farm.jpg?width=1200" alt="A ground-mounted solar panel array under clear sky">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Community Solar Microgrids for East Coast Fishing Villages</h3>
+        <div class="project-meta-row"><span>Terengganu</span><span>2022 – ongoing</span></div>
+        <p>Designing and piloting small-scale solar microgrids for coastal communities with unreliable grid access, paired with technician training delivered on-site.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="circular">
+      <div class="project-media">
+        <span class="project-tag">Circular Economy</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20plastic%20bottle%20collection%20facility%20for%20recycling.jpg?width=1200" alt="Bales of collected plastic bottles at a recycling facility">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Materials Recovery Pilot with Selangor Municipal Councils</h3>
+        <div class="project-meta-row"><span>Selangor</span><span>2021 – 2023</span><span>Completed</span></div>
+        <p>A pilot programme testing household sorting incentives and improved sorting-line design across three municipal recovery facilities.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="biotech">
+      <div class="project-media">
+        <span class="project-tag">Biotechnology</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/NHGRI%20researcher%20uses%20a%20pipette%20to%20remove%20DNA%20from%20a%20micro%20test%20tube.jpg?width=1200" alt="A researcher extracting a sample with a pipette in a laboratory">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Bioremediation of Palm Oil Mill Effluent</h3>
+        <div class="project-meta-row"><span>Johor</span><span>2020 – ongoing</span></div>
+        <p>Screening native microbial strains for effluent treatment applications, in partnership with a regional palm oil processing cooperative.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="agriculture">
+      <div class="project-media">
+        <span class="project-tag">Sustainable Agriculture</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Donggongon%20Sabah%20Rice-paddy-02.jpg?width=1200" alt="Terraced rice paddy fields in Donggongon, Sabah">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Low-Input Rice Trials, Sabah</h3>
+        <div class="project-meta-row"><span>Sabah</span><span>2023 – ongoing</span></div>
+        <p>Field trials of water-efficient, reduced-fertiliser rice growing methods on working smallholder farms, run with state agriculture officers.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="science">
+      <div class="project-media">
+        <span class="project-tag">Environmental Science</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sungai%20Kinabatangan%20Sabah%20Malaysia.jpg?width=1200" alt="The Kinabatangan River winding through forest in Sabah">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>River Basin Water Quality Monitoring Network</h3>
+        <div class="project-meta-row"><span>Sabah</span><span>Since 2018</span></div>
+        <p>A network of monitoring stations tracking sediment, nutrient and pollutant levels along the Kinabatangan river system.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="education">
+      <div class="project-media">
+        <span class="project-tag">Education</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FRIM%20k%C3%BCnstlicher%20Regenwald%20nord%C3%B6stlich%20von%20Kuala%20Lumpur%2C%20mit%20Canopy%20Walkway.jpg?width=1200" alt="Canopy walkway through forest at the Forest Research Institute of Malaysia">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Green Schools &amp; Field Learning Programme</h3>
+        <div class="project-meta-row"><span>Nationwide</span><span>Since 2016</span></div>
+        <p>Hands-on field science days for secondary schools, run at partner forest reserves and research stations across Malaysia.</p>
+      </div>
+    </article>
+
+    <article class="project-entry" data-category="conservation">
+      <div class="project-media">
+        <span class="project-tag">Conservation</span>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Proboscis%20monkey%20(Kinabatangan%20River%2C%20July%202025).jpg?width=1200" alt="A proboscis monkey in riverine forest along the Kinabatangan River">
+      </div>
+      <div class="project-copy" data-reveal>
+        <h3>Habitat Corridor Mapping, Kinabatangan</h3>
+        <div class="project-meta-row"><span>Sabah</span><span>2021 – ongoing</span></div>
+        <p>Mapping wildlife movement corridors where forest, plantation and settlement land intersect, to inform replanting priorities.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="closing">
+    <div class="container">
+      <h2 data-reveal>Have a site or dataset that could use a GSTAM partnership?</h2>
+      <a href="contact.html" class="btn btn--invert" data-reveal data-reveal-delay="1">Propose a project</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <span class="brand"><span class="brand__word"><b>GSTAM</b></span></span>
+      <p>Green Science and Technology Association Malaysia — research, education and field action for a resilient environment.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="about.html">About</a>
+      <a href="focus-areas.html">Focus Areas</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <a href="news-events.html">News &amp; Events</a>
+      <a href="resources.html">Media &amp; Reports</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="https://www.linkedin.com">LinkedIn</a>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.youtube.com">YouTube</a>
+    </div>
+    <div class="footer-col footer-newsletter">
+      <h5>Stay informed</h5>
+      <form onsubmit="return false;">
+        <label for="footer-email" class="visually-hidden">Email address</label>
+        <input id="footer-email" type="email" placeholder="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="footer-note">Occasional updates. Unsubscribe anytime.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span data-current-year>2026</span> Green Science and Technology Association Malaysia</span>
+    <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<div class="cookie-bar" role="dialog" aria-label="Cookie preferences">
+  <p>We use cookies to remember your preferences and understand site usage. Read our <a href="#">privacy policy</a>.</p>
+  <div class="cookie-bar__actions">
+    <button class="cookie-accept">Accept</button>
+    <button class="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.4"/></svg>
+</button>
+
+<script src="main.js"></script>
+<script>
+  /* ---- project filtering (sessionStorage: temporary, per-session UI state) ---- */
+  (function(){
+    "use strict";
+    var buttons = document.querySelectorAll('.filter-btn');
+    var entries = document.querySelectorAll('.project-entry');
+    var countEl = document.querySelector('[data-filter-count]');
+    var STORAGE_KEY = 'gstam_project_filter';
+
+    function applyFilter(filter){
+      var visible = 0;
+      entries.forEach(function(entry){
+        var match = (filter === 'all') || (entry.getAttribute('data-category') === filter);
+        entry.classList.toggle('is-filtered-out', !match);
+        if(match) visible++;
+      });
+      buttons.forEach(function(btn){
+        btn.classList.toggle('is-active', btn.getAttribute('data-filter') === filter);
+      });
+      if(countEl) countEl.textContent = visible + ' of ' + entries.length + ' projects';
+      try{ sessionStorage.setItem(STORAGE_KEY, filter); }catch(e){}
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){ applyFilter(btn.getAttribute('data-filter')); });
+    });
+
+    var saved = null;
+    try{ saved = sessionStorage.getItem(STORAGE_KEY); }catch(e){}
+    applyFilter(saved || 'all');
+  })();
+</script>
+</body>
+</html>
