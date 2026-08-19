@@ -9,7 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 <style>
+  .photo-item a.popup-image{display:block;width:100%;height:100%;cursor:zoom-in;}
+  .mfp-title{font-family:var(--font-body);}
   .res2-masthead{padding:clamp(3rem,6vw,5rem) 0 2.5rem;}
   .res2-masthead h1{font-size:var(--step-1);max-width:16ch;}
   .res2-masthead p{margin-top:1.3rem;max-width:50ch;color:var(--charcoal-500);font-size:1.02rem;}
@@ -256,62 +259,62 @@
 
       <div class="photo-grid" data-reveal>
         <div class="photo-item" data-category="field">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Borneo%20rainforest.jpg?width=700" alt="Mist rising through a dense Bornean rainforest canopy">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Borneo%20rainforest.jpg?width=1600" title="Bornean rainforest canopy at dawn"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Borneo%20rainforest.jpg?width=700" alt="Mist rising through a dense Bornean rainforest canopy"></a>
           <span class="photo-item__cap">Bornean rainforest canopy at dawn</span>
         </div>
 
         <div class="photo-item" data-category="field">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mossy%20Forest%20in%20Cameron%20Highland.jpg?width=700" alt="Mossy montane forest at Cameron Highlands">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Mossy%20Forest%20in%20Cameron%20Highland.jpg?width=1600" title="Mossy forest, Cameron Highlands"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mossy%20Forest%20in%20Cameron%20Highland.jpg?width=700" alt="Mossy montane forest at Cameron Highlands"></a>
           <span class="photo-item__cap">Mossy forest, Cameron Highlands</span>
         </div>
 
         <div class="photo-item" data-category="field">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=700" alt="Mangrove forest at Matang Forest Reserve, Perak">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=1600" title="Matang Mangrove Forest Reserve, Perak"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=700" alt="Mangrove forest at Matang Forest Reserve, Perak"></a>
           <span class="photo-item__cap">Matang Mangrove Forest Reserve, Perak</span>
         </div>
 
         <div class="photo-item" data-category="field">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Proboscis%20Monkey%20with%20baby%20crossing%20a%20rope%20bridge%20across%20a%20river%20in%20Borneo%20Malaysia.JPG?width=700" alt="Proboscis monkey with baby, Borneo, Malaysia">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Proboscis%20Monkey%20with%20baby%20crossing%20a%20rope%20bridge%20across%20a%20river%20in%20Borneo%20Malaysia.JPG?width=1600" title="Proboscis monkey, Sabah"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Proboscis%20Monkey%20with%20baby%20crossing%20a%20rope%20bridge%20across%20a%20river%20in%20Borneo%20Malaysia.JPG?width=700" alt="Proboscis monkey with baby, Borneo, Malaysia"></a>
           <span class="photo-item__cap">Proboscis monkey, Sabah</span>
         </div>
 
         <div class="photo-item" data-category="field">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tropical%20Forest%20Morning%20at%20FRIM%2C%20Malaysia.jpg?width=700" alt="Morning light in the tropical forest research canopy at FRIM">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Tropical%20Forest%20Morning%20at%20FRIM%2C%20Malaysia.jpg?width=1600" title="Morning canopy, FRIM research forest"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tropical%20Forest%20Morning%20at%20FRIM%2C%20Malaysia.jpg?width=700" alt="Morning light in the tropical forest research canopy at FRIM"></a>
           <span class="photo-item__cap">Morning canopy, FRIM research forest</span>
         </div>
 
         <div class="photo-item" data-category="lab">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bangunan%20Makmal%20Fakulti%20Sains%20dan%20Teknologi%20UKM.jpg?width=700" alt="Laboratory building, Faculty of Science and Technology, UKM">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Bangunan%20Makmal%20Fakulti%20Sains%20dan%20Teknologi%20UKM.jpg?width=1600" title="UKM Faculty of Science &amp; Technology labs"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bangunan%20Makmal%20Fakulti%20Sains%20dan%20Teknologi%20UKM.jpg?width=700" alt="Laboratory building, Faculty of Science and Technology, UKM"></a>
           <span class="photo-item__cap">UKM Faculty of Science &amp; Technology labs</span>
         </div>
 
         <div class="photo-item" data-category="lab">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Researchers%20in%20laboratory.jpg?width=700" alt="Researchers examining samples in a laboratory">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Researchers%20in%20laboratory.jpg?width=1600" title="Laboratory research and experimentation"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Researchers%20in%20laboratory.jpg?width=700" alt="Researchers examining samples in a laboratory"></a>
           <span class="photo-item__cap">Laboratory research and experimentation</span>
         </div>
 
         <div class="photo-item" data-category="community">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tree%20planting%20with%20APE%20Malaysia.jpg?width=700" alt="Volunteers planting tree saplings in Malaysia">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Tree%20planting%20with%20APE%20Malaysia.jpg?width=1600" title="Community reforestation planting day"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tree%20planting%20with%20APE%20Malaysia.jpg?width=700" alt="Volunteers planting tree saplings in Malaysia"></a>
           <span class="photo-item__cap">Community reforestation planting day</span>
         </div>
 
         <div class="photo-item" data-category="community">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Donggongon%20Sabah%20Rice-paddy-02.jpg?width=700" alt="Terraced rice paddies in Sabah, Malaysia">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Donggongon%20Sabah%20Rice-paddy-02.jpg?width=1600" title="Sustainable agriculture, Sabah"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Donggongon%20Sabah%20Rice-paddy-02.jpg?width=700" alt="Terraced rice paddies in Sabah, Malaysia"></a>
           <span class="photo-item__cap">Sustainable agriculture, Sabah</span>
         </div>
 
         <div class="photo-item" data-category="energy">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=700" alt="Technicians inspecting a large-scale solar panel array">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=1600" title="Utility-scale solar array"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=700" alt="Technicians inspecting a large-scale solar panel array"></a>
           <span class="photo-item__cap">Utility-scale solar array</span>
         </div>
 
         <div class="photo-item" data-category="energy">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Rooftop%20Solar%20System%20of%20Delhi%20Metro%20at%20the%20Welcome%20Metro%20Station%20of%20Delhi%20Metro.jpg?width=700" alt="Rooftop solar installation at a metro station">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Rooftop%20Solar%20System%20of%20Delhi%20Metro%20at%20the%20Welcome%20Metro%20Station%20of%20Delhi%20Metro.jpg?width=1600" title="Rooftop solar reference project"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Rooftop%20Solar%20System%20of%20Delhi%20Metro%20at%20the%20Welcome%20Metro%20Station%20of%20Delhi%20Metro.jpg?width=700" alt="Rooftop solar installation at a metro station"></a>
           <span class="photo-item__cap">Rooftop solar reference project</span>
         </div>
 
         <div class="photo-item" data-category="energy">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Material%20recovery%20facility%202004-03-24.jpg?width=700" alt="Sorted recyclable materials at a recovery facility">
+          <a class="popup-image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Material%20recovery%20facility%202004-03-24.jpg?width=1600" title="Materials-recovery facility"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Material%20recovery%20facility%202004-03-24.jpg?width=700" alt="Sorted recyclable materials at a recovery facility"></a>
           <span class="photo-item__cap">Materials-recovery facility</span>
         </div>
       </div>
@@ -380,7 +383,10 @@
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.4"/></svg>
 </button>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="main.js"></script>
+<script src="enhancements.js"></script>
 <script>
   
   (function(){

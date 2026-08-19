@@ -9,6 +9,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<style>
+  /* ---- Live Field Conditions (REST API widget) ---- */
+  .weather-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.2rem;}
+  @media (max-width:820px){ .weather-strip{grid-template-columns:1fr;} }
+  .weather-card{
+    display:flex;flex-direction:column;gap:0.3rem;
+    border:1px solid var(--line);background:var(--ivory-50);padding:1.4rem 1.6rem;
+  }
+  .weather-card__site{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--clay-500);}
+  .weather-card__status{font-size:0.9rem;color:var(--charcoal-500);}
+  .weather-card__status--error{color:var(--clay-500);}
+  .weather-card__temp{font-family:var(--font-display);font-size:2rem;color:var(--forest-950);}
+  .weather-card__desc{font-size:0.95rem;color:var(--charcoal-700);}
+  .weather-card__wind,.weather-card__ts{font-size:0.78rem;color:var(--charcoal-500);}
+
+  /* ---- Field photography carousel (Slick plugin) ---- */
+  .field-carousel{margin-top:2px;}
+  .field-carousel .fc-slide{padding:0 8px;}
+  .field-carousel img{width:100%;height:340px;object-fit:cover;display:block;}
+  .field-carousel .slick-dots{bottom:-34px;}
+  .field-carousel .slick-prev, .field-carousel .slick-next{z-index:2;}
+  .field-carousel .slick-prev:before, .field-carousel .slick-next:before{color:var(--forest-950);}
+</style>
 </head>
 <body data-page-title="Home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -147,6 +172,19 @@
     </div>
   </section>
 
+  <!-- ===================== Live field conditions (REST API) ===================== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Live field conditions</h2>
+        <p data-reveal>Real-time weather at three of our project sites, pulled live from the Open-Meteo public forecast API each time this page loads.</p>
+      </div>
+      <div class="weather-strip" id="field-weather" data-reveal>
+        <!-- populated by enhancements.js via REST API call -->
+      </div>
+    </div>
+  </section>
+
   <section class="feature-split" data-reveal>
     <div class="feature-split__media">
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=1400" alt="Aerial view of the Matang Mangrove Forest Reserve in Perak, Malaysia">
@@ -219,6 +257,23 @@
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lush%20greenery%20in%20Forest%20Research%20Institute%20of%20Malaysia%20(FRIM).jpg?width=1600" alt="">
           <span class="video-block__play"><svg viewBox="0 0 24 24" fill="var(--forest-950)"><path d="M8 5v14l11-7z"/></svg></span>
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Field photography carousel (Slick plugin) ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-reveal>Field photography</h2>
+        <p data-reveal>A rotating look at where our members work and learn, from mangrove reserves to rainforest canopy.</p>
+      </div>
+      <div class="field-carousel" data-reveal>
+        <div class="fc-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matang%20Mangrove%20Forest%2C%20Malaysia%20(477879399).jpg?width=900" alt="Matang Mangrove Forest Reserve, Perak"></div>
+        <div class="fc-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Morning%20fog%20over%20Danum%20Valley%20(27329938517).jpg?width=900" alt="Morning fog over Danum Valley, Sabah"></div>
+        <div class="fc-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lush%20greenery%20in%20Forest%20Research%20Institute%20of%20Malaysia%20(FRIM).jpg?width=900" alt="Forest Research Institute of Malaysia canopy"></div>
+        <div class="fc-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Borneo%20rainforest.jpg?width=900" alt="Bornean rainforest canopy"></div>
+        <div class="fc-slide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Panels%20at%20Topaz%20Solar%205%20(8159036498).jpg?width=900" alt="Utility-scale solar array"></div>
       </div>
     </div>
   </section>
@@ -341,6 +396,9 @@
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.4"/></svg>
 </button>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="main.js"></script>
+<script src="enhancements.js"></script>
 </body>
 </html>
